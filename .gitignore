@@ -260,7 +260,8 @@ fabric.properties
 .LSOverride
 
 # Icon must end with two \r
-Icon
+Icon
+
 
 # Thumbnails
 ._*
@@ -952,3 +953,8 @@ FodyWeavers.xsd
 # Additional files built by Visual Studio
 
 # End of https://www.toptal.com/developers/gitignore/api/windows,linux,macos,vim,emacs,jetbrains+all,visualstudio,visualstudiocode,netbeans,eclipse,node,nextjs,react,yarn,sonar,git,gitbook,tortoisegit
+
+# Additional entries not created by gitignore.io
+
+## Development Database 
+db.sqlite

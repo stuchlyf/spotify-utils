@@ -5,7 +5,7 @@ import {
   type NextAuthOptions,
 } from "next-auth";
 import { type Adapter } from "next-auth/adapters";
-import DiscordProvider from "next-auth/providers/discord";
+import SpotifyProvider from "next-auth/providers/spotify";
 
 import { env } from "@/env";
 import { db } from "@/server/db";
@@ -59,9 +59,10 @@ export const authOptions: NextAuthOptions = {
     verificationTokensTable: verificationTokens,
   }) as Adapter,
   providers: [
-    DiscordProvider({
-      clientId: env.DISCORD_CLIENT_ID,
-      clientSecret: env.DISCORD_CLIENT_SECRET,
+    SpotifyProvider({
+      clientId: env.SPOTIFY_AUTH_PROVIDER_CLIENT_ID,
+      clientSecret: env.SPOTIFY_AUTH_PROVIDER_CLIENT_SECRET,
+      authorization: `${env.SPOTIFY_AUTH_PROVIDER_SCHEME}://${env.SPOTIFY_AUTH_PROVIDER_HOST}/authorize?scope=user-read-email,user-read-private,playlist-modify-public,playlist-modify-private,ugc-image-upload,playlist-read-private,playlist-read-collaborative`,
     }),
     /**
      * ...add more providers here.
